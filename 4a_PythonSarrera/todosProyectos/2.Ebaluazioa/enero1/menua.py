@@ -86,6 +86,7 @@ print('FIN. ')
 
 
 
+
 #aukera = "aafw"
 
 
