@@ -6,6 +6,9 @@
 import eragiketak as f1
 import egunak as f2
 import irudiak as f3
+import eragiketak as f1
+import egunak as f2
+import irudiak as f3
 
 aukera = "proba"
 
