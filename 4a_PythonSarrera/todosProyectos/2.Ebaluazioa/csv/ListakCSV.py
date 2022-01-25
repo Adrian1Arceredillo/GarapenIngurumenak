@@ -39,6 +39,30 @@ def nomberApellidoDelNum23():
             line_count += 1
 
 
+def soldata_igo():
+    with open('employee.txt', mode='r') as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+        line_count = 0
+        numero = input("Sartu langilearen zenbakia: ").capitalize()
+        for row in csv_reader:
+            if line_count == 0:
+
+                line_count += 1
+            if row["Zbki"] == numero:
+                print(f'\t{row["Izena"]}, {row["Abizeba"]}, {row["Soldata"]}\n ')
+
+                sueldo = int(input("Sartu soldata berria: "))
+
+
+
+                row["Soldata"] = sueldo
+                print(f'\t{row["Izena"]}, {row["Abizeba"]}, {row["Soldata"]}\n ')
+
+
+
+#buscar la forma de cambiar un dato de la lista desde este archivo
+#p.e.: el usuario cambiará el nombre del trabajador que tenga X sueldo
+
 def verTodosLosLangiles():
     with open('employee.txt', mode='r') as csv_file:
         csv_reader = csv.DictReader(csv_file)
@@ -127,11 +151,14 @@ def kirolikEz():
             line_count += 1
 
 
+#lista de listas:
+#bilatutakoa = [langilea for langilea in datuak if langilea[9] = 'Eibar']
+
 
 aukera = "afwff"
 salir = False
 
-while(aukera != 'i'):
+while(aukera != 'j'):
     print('MENUA')
     print('-----------')
     print('a) Ikusi langile guztiak. ')
@@ -142,7 +169,8 @@ while(aukera != 'i'):
     print('f) Soldata TXIKIENA bistaratu (+ izena))')
     print('g) Kirola egiten ez dutenen lanpostua eta herria ')
     print('h) Txikienetik zaharrenera ordenatu ')
-    print('i) Irten')
+    print('i) Soldata igo ')
+    print('j) Irten')
 
     print()
 
@@ -191,6 +219,11 @@ while(aukera != 'i'):
          print()
 
     elif (aukera == 'i'):
+         soldata_igo()
+         print('---------------------------------------------------------')
+         print()
+
+    elif (aukera == 'j'):
         print()
         print("Saliendo...\nFIN. ")
         break
