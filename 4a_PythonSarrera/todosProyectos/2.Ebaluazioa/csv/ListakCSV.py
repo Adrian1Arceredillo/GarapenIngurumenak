@@ -213,12 +213,10 @@ def calcularEdades():
 aukera = "afwff"
 salir = False
 
-print('----')
-pruebaLeerDatakLista()
 
-print('----')
 
 while(aukera != 'k'):
+    print('-----------')
     print('MENUA')
     print('-----------')
     print('a) Ikusi langile guztiak. ')
