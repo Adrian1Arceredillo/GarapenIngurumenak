@@ -1,4 +1,5 @@
 
+from datetime import datetime, date
 import csv
 
 from csv import reader
@@ -39,7 +40,7 @@ def nomberApellidoDelNum23():
             line_count += 1
 
 
-def soldata_igo():
+def soldataAldatu():
     with open('employee.txt', mode='r') as csv_file:
         csv_reader = csv.DictReader(csv_file)
         line_count = 0
@@ -77,6 +78,7 @@ def verTodosLosLangiles():
         print(f'Processed {line_count} lines.')
 
 
+
 def sueldoSuperiorA():
     with open('employee.txt', mode='r') as csv_file:
         csv_reader = csv.DictReader(csv_file)
@@ -102,6 +104,7 @@ def pruebaSolMax():
             langilea = i
             #print(soldMax, f'\t{row["Izena"]}, {row["Abizeba"]} ')
     print(listaCsv[langilea][7] + " " + listaCsv[langilea][8] + " " + listaCsv[langilea][3])  #[langilea] = fila; [7] = columna deseada
+
 
 
 def pruebaSolMin():
@@ -151,6 +154,58 @@ def kirolikEz():
             line_count += 1
 
 
+
+#primera prueba con fechas
+""" 
+enlaces info: 
+https://stackabuse.com/converting-strings-to-datetime-in-python/ 
+https://stackoverflow.com/questions/55259313/print-the-local-date-and-time-in-python
+https://stackoverflow.com/questions/4436957/pythonic-difference-between-two-dates-in-years
+"""
+def pruebaLeerDatakLista():
+    dateTimeString = listaCsv[1][10]
+    print('Obtener el dato de la lista: ' + dateTimeString)
+
+    dateTimeObjeto = datetime.strptime(dateTimeString, '%Y/%m/%d')
+    print('Cambiar el dato de tipo String a tipo Datetime: ' + dateTimeString)
+
+
+
+#leer fechas de la lista
+def leerFechasLista():
+    fechasNacimiento = list()
+    for i in range(1, len(listaCsv)):
+        fechasNacimiento.append(listaCsv[i][10])
+
+    print('Jaiotze datak: ' + str(fechasNacimiento))
+
+
+#calcular edad de cada trabajador
+def calcularEdades():
+    langilea = input("Sartu langile baten ID-a: ")
+    data = listaCsv[int(langilea)][10]  #variable tipo String
+
+    # p.e.: "1962/06/25"
+    urtea = data[0:4]   #1962
+    hilabetea = data[5:7]   #06
+    eguna = data[8:10]  #25
+
+    urtebetetzea = date(int(urtea), int(hilabetea), int(eguna)) #generar una variable date casteando datos
+    today = date.today()
+    print(today)
+
+    age = today.year - urtebetetzea.year
+    # si el mes actual es MENOR que el del cumpleaños, TODAVÍA NO ha cumplido (edad - 1)
+    if today.month < urtebetetzea.month:
+        age -= 1
+    # si el mes actual es IGUAL que el del cumpleaños, pero el día actual es mayor, TODAVÍA NO ha cumplido (edad - 1)
+    elif today.month == urtebetetzea.month and today.day < urtebetetzea.day:
+        age -= 1
+    print("Adina: " + str(age))
+
+
+
+
 #lista de listas:
 #bilatutakoa = [langilea for langilea in datuak if langilea[9] = 'Eibar']
 
@@ -158,7 +213,12 @@ def kirolikEz():
 aukera = "afwff"
 salir = False
 
-while(aukera != 'j'):
+print('----')
+pruebaLeerDatakLista()
+
+print('----')
+
+while(aukera != 'k'):
     print('MENUA')
     print('-----------')
     print('a) Ikusi langile guztiak. ')
@@ -170,7 +230,8 @@ while(aukera != 'j'):
     print('g) Kirola egiten ez dutenen lanpostua eta herria ')
     print('h) Txikienetik zaharrenera ordenatu ')
     print('i) Soldata igo ')
-    print('j) Irten')
+    print('j) Adierazitako langile baten ADINA kalkulatu ')
+    print('k) Irten')
 
     print()
 
@@ -219,11 +280,16 @@ while(aukera != 'j'):
          print()
 
     elif (aukera == 'i'):
-         soldata_igo()
+         soldataAldatu()
          print('---------------------------------------------------------')
          print()
 
     elif (aukera == 'j'):
+         calcularEdades()
+         print('---------------------------------------------------------')
+         print()
+
+    elif (aukera == 'k'):
         print()
         print("Saliendo...\nFIN. ")
         break
