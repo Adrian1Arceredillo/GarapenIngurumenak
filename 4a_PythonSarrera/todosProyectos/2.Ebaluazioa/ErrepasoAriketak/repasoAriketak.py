@@ -1,6 +1,7 @@
 
 #ejercicio1
 #https://www.lawebdelprogramador.com/codigo/Python/3053-Calcular-los-multiplos-de-3-y-5.html
+import random
 
 
 #ariketa 1
@@ -79,6 +80,7 @@ def contarLetrasNumerosDeString():
     numeros = 0
 
     stringAdrian = "Python 3.2"
+    print(stringAdrian.si)
     for i in stringAdrian:
         if (i.isalpha()):
             letras += 1
@@ -124,6 +126,109 @@ def mesDiaPerteneceAEstacion():
 
     numeroMes = hilabeteGuztiak.index(stringMes)
     print(numeroMes + 1)
+
+
+#ejercicio 10
+def tablaDeMultiplicar():
+    zenbakia = int(input("Sartu zenbaki bat (1-10): "))
+
+    for i in range (1, 11):
+        print(str(zenbakia) + " x " + str(i) + " = " + str(zenbakia * i))
+
+
+
+#ejercicio 11
+def trianguloConNumeros():
+
+    numeroFilas = 9
+    for row in range(numeroFilas):
+        for col in range(0, row + 1):
+            print(row + 1, end=" ")
+        print()
+
+
+#ejercicio12
+def adivinarNumeroOculto():
+
+    #print(random.randint(0, 9))
+
+    numeroSecreto = random.randint(0, 9)
+    zenbakiaUser = 30
+
+    while zenbakiaUser != numeroSecreto:
+        zenbakiaUser = int(input("Sartu 1-9 ren artean dagoen zenbaki bat: "))
+
+    print("Numero del Programa: " + str(numeroSecreto))
+    print("Numero del Usuario: " + str(zenbakiaUser))
+
+
+#ejercicio 13
+def darLaVueltaString():
+    hitzaUser = input("Sartu hitz bat: ")
+
+    print(hitzaUser[::-1])
+
+
+#ejercicio 14
+
+#ejercicio 15
+def mediaDe3Numeros():
+    num1 = random.randint(0, 10)
+    num2 = random.randint(0, 10)
+    num3 = random.randint(0, 10)
+
+    print("Numero 1: " + str(num1))
+    print("Numero 2: " + str(num2))
+    print("Numero 3: " + str(num3))
+
+    sumaTodos = num1 + num2 + num3;
+    mediaNumeros = sumaTodos / 3;
+
+    print("La media es: " + str(mediaNumeros))
+
+
+#ejercicio 16
+def sumaTodosLosElementosLista():
+    listaNumeros = [3, 4, 2, 11];
+    print(listaNumeros)
+    sumaTodo = 0
+
+    for i in (listaNumeros):
+        sumaTodo += i
+    print("La suma total es: " + str(sumaTodo))
+
+
+#ejercicio 17
+def multiplicarElementosLista():
+    zenbakienZerrenda = [2, 2, 3, 4]
+    print(zenbakienZerrenda)
+    multiplicarTodo = 1
+    #multiplicarTodo = zenbakienZerrenda[0]
+
+    for i in (zenbakienZerrenda):
+        multiplicarTodo = multiplicarTodo * i
+    print("El resultado es: " + str(multiplicarTodo))
+
+
+#ejercicio 18
+def mayorElementoLista():
+
+    listaDeNumeros = [2, 4, 56, 55]
+    print(listaDeNumeros)
+
+    handiena = max(listaDeNumeros)
+    print("El mayor numero de la lista es: " + str(handiena))
+
+
+#ejercicio 19
+def menorElementoLista():
+    listaDeNumeros = [2, 4, 56, 55]
+    print(listaDeNumeros)
+
+    txikiena = min(listaDeNumeros)
+    print("El menor numero de la lista es: " + str(txikiena))
+
+
 #############################################
 
 #multiplos5y7() #ejercicio 1
@@ -134,8 +239,16 @@ def mesDiaPerteneceAEstacion():
 #contarLetrasNumerosDeString() #ejercicio 6
 #patronDibujarLetraA()   #ejercicio 7
 #letraVocalOConsonante() #ejercicio 8
-mesDiaPerteneceAEstacion() #ejercicio 9
-
-
+#mesDiaPerteneceAEstacion() #ejercicio 9 - Galdetu
+#tablaDeMultiplicar()   #ejercicio 10
+#trianguloConNumeros()  #ejercicio 11
+#adivinarNumeroOculto() #ejercicio 12
+#darLaVueltaString()    #ejercicio 13
+                        #ejercicio 14 - Galdetu
+#mediaDe3Numeros()   #ejercicio 15
+#sumaTodosLosElementosLista()    #ejercicio 16
+#multiplicarElementosLista()     #ejercicio 17
+#mayorElementoLista()   #ejercicio 18
+#menorElementoLista()   #ejercicio 19
 
 #https://python-para-impacientes.blogspot.com/2014/02/operaciones-con-fechas-y-horas.html
