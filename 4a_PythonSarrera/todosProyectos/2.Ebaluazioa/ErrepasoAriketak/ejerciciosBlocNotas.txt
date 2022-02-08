@@ -1,7 +1,39 @@
-18.	Idatzi zerrenda bateko zenbaki handiena zein den esango duen programa bat.
+9.	Idatzi Python programa bat hilabete eta egun bat irakurriko dituena eta zein urtarori dagokion esango duena. 
+Esperotako irteera:
+Sartu hilabetea (adibidez Urtarrila, Otsaila...): Uztaila                     
+Sartu eguna: 31                                                       
+Urtaroa udazkena da
 
-listaDeNumeros = [2, 4, 56, 55]
-print(listaDeNumeros)
 
-txikiena = min(listaDeNumeros)
-print("El menor numero de la lista es: " + str(txikiena))
+hilabeteGuztiak = (
+    'Urtarrila', 'Otsaila', 'Martxoa', 'Apirila', 'Maiatza', 'Ekaina', 'Uztaila', 'Abuztua', 'Iraila', 'Urria', 'Azaroa',
+    'Abendua');
+
+	primaveraInicio = date(2020, 03, 20)
+	primaveraFinal = date(2020, 06, 21)
+	print(primaveraFinal)
+
+	inicioVerano = date(2020, 06, 21)
+	finalVerano = date(2020, 09, 23)
+
+	inicioOtoño = date(2020, 09, 23)
+	finalOtoño = date(2020, 12, 21)
+
+	inicioInvierno = date(2020, 12, 21)
+	finalInvierno = date(2021, 03, 20)
+
+    stringMes = input("Sartu hilabete baten izena (urtarrila, otsaila...): ").capitalize()
+    diaMes = int(input("Sartu hilabetearen egun bat: "))
+
+    numeroMes = hilabeteGuztiak.index(stringMes)
+	
+	#p.e.: año = 2020 - ya que al usuario no se le pide el valor del año
+	fechaUsuario = date(2020, numeroMes + 1, diaMes)
+	print("Fecha del usuario: " + str(fechaUsuario))
+
+	if (fechaUsuario > actualFecha):
+		print("no")
+	else:
+		print("si")
+
+
