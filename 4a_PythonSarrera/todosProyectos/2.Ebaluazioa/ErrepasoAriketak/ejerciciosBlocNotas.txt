@@ -1,39 +1,11 @@
-9.	Idatzi Python programa bat hilabete eta egun bat irakurriko dituena eta zein urtarori dagokion esango duena. 
-Esperotako irteera:
-Sartu hilabetea (adibidez Urtarrila, Otsaila...): Uztaila                     
-Sartu eguna: 31                                                       
-Urtaroa udazkena da
+26.	Idatzi python programa bat zerrenda bateko hiru zenbaki txikienak pantailaratuko dituena (ordenan). 
 
-
-hilabeteGuztiak = (
-    'Urtarrila', 'Otsaila', 'Martxoa', 'Apirila', 'Maiatza', 'Ekaina', 'Uztaila', 'Abuztua', 'Iraila', 'Urria', 'Azaroa',
-    'Abendua');
-
-	primaveraInicio = date(2020, 03, 20)
-	primaveraFinal = date(2020, 06, 21)
-	print(primaveraFinal)
-
-	inicioVerano = date(2020, 06, 21)
-	finalVerano = date(2020, 09, 23)
-
-	inicioOtoño = date(2020, 09, 23)
-	finalOtoño = date(2020, 12, 21)
-
-	inicioInvierno = date(2020, 12, 21)
-	finalInvierno = date(2021, 03, 20)
-
-    stringMes = input("Sartu hilabete baten izena (urtarrila, otsaila...): ").capitalize()
-    diaMes = int(input("Sartu hilabetearen egun bat: "))
-
-    numeroMes = hilabeteGuztiak.index(stringMes)
+def imprimir3ValoresMasPequeñosLista():
+	listaAdri = [16, 4, 9, 1, 3, 20, 8]
+	print("\nLista inicial: " + str(listaAdri))
 	
-	#p.e.: año = 2020 - ya que al usuario no se le pide el valor del año
-	fechaUsuario = date(2020, numeroMes + 1, diaMes)
-	print("Fecha del usuario: " + str(fechaUsuario))
+	listaAdri.sort()
+	print("\nLista ordenada: " + listaAdri)
 
-	if (fechaUsuario > actualFecha):
-		print("no")
-	else:
-		print("si")
-
+	print("Hiru zenbaki txikienak: " + str(listaAdri[0:3]))
 

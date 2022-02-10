@@ -136,34 +136,48 @@ def fechaDecirEstacion():
         'Azaroa',
         'Abendua');
 
-    actualFecha = date.today()  #fecha de hoy
-
-    primaveraInicio = date(2020, 3, 20)
-    primaveraFinal = date(2020, 6, 21)
-    print(primaveraFinal)
-
-    inicioVerano = date(2020, 6, 21)
-    finalVerano = date(2020, 9, 23)
-
-    inicioOtoño = date(2020, 9, 23)
-    finalOtoño = date(2020, 12, 21)
-
-    inicioInvierno = date(2020, 12, 21)
-    finalInvierno = date(2021, 3, 20)
-
     stringMes = input("Sartu hilabete baten izena (urtarrila, otsaila...): ").capitalize()
     diaMes = int(input("Sartu hilabetearen egun bat: "))
 
     numeroMes = hilabeteGuztiak.index(stringMes)
 
     # p.e.: año = 2020 - ya que al usuario no se le pide el valor del año
-    fechaUsuario = date(2020, numeroMes + 1, diaMes)
+    randomUrtea = random.randint(2000, 2040)  # obtener un valor aleatorio para la variable correspondiente al año (estará entre 2000-2040)
+    print(randomUrtea)
+    fechaUsuario = date(randomUrtea, numeroMes + 1, diaMes)
+
+
+    actualFecha = date.today()  #fecha de hoy
+
+    inicioPrimavera = date(randomUrtea, 3, 20)
+    finalPrimavera = date(randomUrtea, 6, 21)
+    print(finalPrimavera)
+
+    inicioVerano = date(randomUrtea, 6, 21)
+    finalVerano = date(randomUrtea, 9, 23)
+
+    inicioOtoño = date(randomUrtea, 9, 23)
+    finalOtoño = date(randomUrtea, 12, 21)
+
+    # dividir el invierno en 2; desde que empieza hasta el final del año, y desde el inicio de año hasta que el invierno acabe
+    inicioInviernoParte1 = date(randomUrtea, 12, 21)
+    finalInviernoParte1 = date(randomUrtea, 12, 31)
+
+    inicioInviernoParte2 = date(randomUrtea, 1, 1)
+    finalInviernoParte2 = date(randomUrtea + 1, 3, 20)
+
+
     print("Fecha del usuario: " + str(fechaUsuario))
 
-    if (fechaUsuario > actualFecha):
-        print("no")
-    else:
-        print("si")
+    if (fechaUsuario >= inicioPrimavera and fechaUsuario < finalPrimavera):
+        print("Es Primavera. ")
+    elif (fechaUsuario >= inicioVerano and fechaUsuario < finalVerano):
+        print("Es Verano. ")
+    elif (fechaUsuario >= inicioOtoño and fechaUsuario < finalOtoño):
+        print("Es Otoño. ")
+    elif ((fechaUsuario >= inicioInviernoParte1 and fechaUsuario <= finalInviernoParte1) or
+          (fechaUsuario >= inicioInviernoParte2 and fechaUsuario <= finalInviernoParte2)):
+        print("Es Invierno. ")
 
 
 #ejercicio 10
@@ -285,6 +299,101 @@ def menorElementoLista():
     print("El menor numero de la lista es: " + str(txikiena))
 
 
+#ejercicio 20 - si X elemento de una lista está en otra lista, se copiará; si ya está, querrá decir que está repetido
+def borrarElementosRepetidosLista():
+    listaInicial = ["adrian", "luis", "adrian", "pedro"]
+    listaFinal = []
+
+    print("Lista CON duplicados: " + str(listaInicial))
+
+    for elemento in listaInicial:
+        if elemento not in listaFinal:
+            listaFinal.append(elemento)
+    print(listaFinal)
+
+#ejercicio 20 - utilizando la función set()
+def eliminarDuplicadosLista():
+    listaOriginal = ["apple", "bannana", "cherry", "bannana", "bannana"]
+    print("Lista original: " + str(listaOriginal))
+
+    listaFiltrada = list(set(listaOriginal))
+    print("Lista sin elementos duplicados: " + str(listaFiltrada))
+
+
+#ejercicio 21
+def comprobarSiListaVacia():
+    listaComprobar = [3, "tres", 33, 'a']
+    estaVacia = True
+
+    print("\nLista: " + str(listaComprobar))
+    listarenTamaina = len(listaComprobar)
+
+    if listarenTamaina > 0:
+        estaVacia = False
+
+    if estaVacia == True:
+        print("\nLa lista ESTÁ VACÍA. ")
+        print("Tamaño lista: " + str(listarenTamaina))
+    else:
+        print("\nLa lista NO está vacía. ")
+        print("Tamaño lista: " + str(listarenTamaina))
+
+
+#ejercicio 22
+def clonarLista():
+    lista1 = ["adrian", "lorena", 1, 2, "dos"]
+    listaCopia = lista1.copy()
+
+    print("Lista original: " + str(lista1))
+    print("Clon de la lista: " + str(listaCopia))
+
+
+#ejercicio 23
+def sartuIndexLortuElementua(): #https://www.programiz.com/python-programming/methods/list/index
+    listaAdri = ["buenos", "dias", 5, "como", "estas", "hoy", "?"]
+    print("\n" + str(listaAdri))
+
+    zenbakiaUser = int(input("\nSartu zenbaki bat: "))
+
+    dagokionElementua = listaAdri[zenbakiaUser - 1]
+    print("Zerrendaren, " + str(zenbakiaUser) + " garren posizioan, " + "'" + str(dagokionElementua) + "' elementua dago. ")
+
+
+#ejercicio 24
+def obtenerIndexDeUnElemento():
+    listaAdri = ["1", "nombre", "apellido", "2", 'a']
+    print("\nLista: " + str(listaAdri))
+
+    elementua = input("\nIdatzi zerrendako elementu bat: ")
+
+    indexElementua = listaAdri.index(elementua)
+    print("\nSarturiko " + "'" + str(elementua) + "'" +  " zerrendako " + str(indexElementua + 1) + " posizioan dago. ")
+
+
+#ejercicio 25
+def imprimirRandomIndexLista():
+    listaAdri = [1, "FC", 0, "Barcelona", 7, "gol"]
+    print("\nLista: " + str(listaAdri))
+
+    randomIndex = random.randint(1, len(listaAdri))
+    print("\nNumero random: " + str(randomIndex))
+
+    zerrendakoElementua = listaAdri[randomIndex - 1]
+    print("Posizio horretan " + "(" + str(randomIndex) + ")" + " dagoen elementua " + "'" + str(zerrendakoElementua) + "'" + " da. ")
+
+
+#ejercicio 26
+def imprimir3ValoresMasPequeñosLista():
+    listaAdri = [16, 4, 9, 1, 3, 20, 8]
+    print("\nLista inicial: " + str(listaAdri))
+
+    listaAdri.sort()
+    print("Lista ordenada: " + str(listaAdri))
+
+    print("\nHiru zenbaki txikienak: " + str(listaAdri[0:3]))
+
+
+
 #prueba recorrer dígitos de un número
 def recorrerNumero():
     numeroPrueba = 511
@@ -304,7 +413,6 @@ def recorrerNumero():
 
 #############################################
 #recorrerNumero()   #prueba - recorrer digitos de un numero / caracteres de un string
-fechaDecirEstacion()    #prueba - hacer pruebas con fechas
 
 #multiplos5y7() #ejercicio 1
 #cambioCelsiusFahrenheit() #ejercicio 2
@@ -314,9 +422,7 @@ fechaDecirEstacion()    #prueba - hacer pruebas con fechas
 #contarLetrasNumerosDeString() #ejercicio 6
 #patronDibujarLetraA()   #ejercicio 7
 #letraVocalOConsonante() #ejercicio 8
-
-#mesDiaPerteneceAEstacion() #ejercicio 9 - Galdetu
-
+#fechaDecirEstacion() #ejercicio 9
 #tablaDeMultiplicar()   #ejercicio 10
 #trianguloConNumeros()  #ejercicio 11
 #adivinarNumeroOculto() #ejercicio 12
@@ -328,4 +434,12 @@ fechaDecirEstacion()    #prueba - hacer pruebas con fechas
 #mayorElementoLista()   #ejercicio 18
 #menorElementoLista()   #ejercicio 19
 
+#borrarElementosRepetidosLista() #ejercicio 20      - comparando elementos en dos listas
+#eliminarDuplicadosLista() #ejercicio 20            - usando la función set()
+#comprobarSiListaVacia() #ejercicio 21
+#clonarLista() #ejercicio 22
+#sartuIndexLortuElementua() #ejercicio 23
+#obtenerIndexDeUnElemento()  #ejercicio 24
+#imprimirRandomIndexLista()  #ejercicio 25
+imprimir3ValoresMasPequeñosLista()  #ejercicio 26
 #https://python-para-impacientes.blogspot.com/2014/02/operaciones-con-fechas-y-horas.html
