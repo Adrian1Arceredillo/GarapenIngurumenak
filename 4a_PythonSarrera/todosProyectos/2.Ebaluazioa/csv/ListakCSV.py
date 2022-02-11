@@ -4,6 +4,9 @@ import csv
 
 from csv import reader
 
+
+
+
 with open('employee.txt', mode='r') as csv_file:
     csv_reader = reader(csv_file)#csv.DictReader(csv_file)
     listaCsv = list(csv_reader)

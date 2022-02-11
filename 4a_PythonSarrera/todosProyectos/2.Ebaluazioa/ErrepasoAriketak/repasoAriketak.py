@@ -356,7 +356,7 @@ def sartuIndexLortuElementua(): #https://www.programiz.com/python-programming/me
     zenbakiaUser = int(input("\nSartu zenbaki bat: "))
 
     dagokionElementua = listaAdri[zenbakiaUser - 1]
-    print("Zerrendaren, " + str(zenbakiaUser) + " garren posizioan, " + "'" + str(dagokionElementua) + "' elementua dago. ")
+    print("Zerrendaren " + str(zenbakiaUser) + "-garren posizioan, " + "'" + str(dagokionElementua) + "' elementua dago. ")
 
 
 #ejercicio 24
@@ -364,10 +364,10 @@ def obtenerIndexDeUnElemento():
     listaAdri = ["1", "nombre", "apellido", "2", 'a']
     print("\nLista: " + str(listaAdri))
 
-    elementua = input("\nIdatzi zerrendako elementu bat: ")
+    elementuaUser = input("\nIdatzi zerrendako elementu bat: ")
 
-    indexElementua = listaAdri.index(elementua)
-    print("\nSarturiko " + "'" + str(elementua) + "'" +  " zerrendako " + str(indexElementua + 1) + " posizioan dago. ")
+    indexElementua = listaAdri.index(elementuaUser)
+    print("\nSarturiko " + "'" + str(elementuaUser) + "'" +  " zerrendako " + str(indexElementua + 1) + " posizioan dago. ")
 
 
 #ejercicio 25
@@ -415,7 +415,7 @@ def recorrerNumero():
 #recorrerNumero()   #prueba - recorrer digitos de un numero / caracteres de un string
 
 #multiplos5y7() #ejercicio 1
-#cambioCelsiusFahrenheit() #ejercicio 2
+cambioCelsiusFahrenheit() #ejercicio 2
 #dibujarFigura()    #ejercicio 3
 #paresEImparesDeUnaLista()   #ejercicio 4
 #cambiarIteracionesCondiones() #ejercicio 5
@@ -441,5 +441,5 @@ def recorrerNumero():
 #sartuIndexLortuElementua() #ejercicio 23
 #obtenerIndexDeUnElemento()  #ejercicio 24
 #imprimirRandomIndexLista()  #ejercicio 25
-imprimir3ValoresMasPequeñosLista()  #ejercicio 26
+#imprimir3ValoresMasPequeñosLista()  #ejercicio 26
 #https://python-para-impacientes.blogspot.com/2014/02/operaciones-con-fechas-y-horas.html
