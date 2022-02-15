@@ -1,11 +1,17 @@
-26.	Idatzi python programa bat zerrenda bateko hiru zenbaki txikienak pantailaratuko dituena (ordenan). 
 
-def imprimir3ValoresMasPequeñosLista():
-	listaAdri = [16, 4, 9, 1, 3, 20, 8]
-	print("\nLista inicial: " + str(listaAdri))
+
+3.	Idatzi Python programa bat ondorengo patroia erabiliko duena habiratutako for bukleak erabiliz. (for bat bestearen barruan)
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+*
+
+
+def dibujarMedioRombo():
+	numFilas = int(input("Sartu lerro kopurua: "))
 	
-	listaAdri.sort()
-	print("\nLista ordenada: " + listaAdri)
-
-	print("Hiru zenbaki txikienak: " + str(listaAdri[0:3]))
-

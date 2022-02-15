@@ -64,7 +64,7 @@ def paresEImparesDeUnaLista():
 
 #ejercicio 5
 def cambiarIteracionesCondiones():
-    for i in range(1, 50):
+    for i in range(0, 51):
 
         if (i % 3 == 0) & (i % 5 == 0):
             print("fizzbuzz")
@@ -81,7 +81,7 @@ def contarLetrasNumerosDeString():
     numeros = 0
 
     stringAdrian = "Python 3.2"
-    print(stringAdrian.si)
+    print(stringAdrian)
     for i in stringAdrian:
         if (i.isalpha()):
             letras += 1
@@ -89,20 +89,41 @@ def contarLetrasNumerosDeString():
             numeros += 1
 
     print()
-    print("String: " + stringAdrian)
+    print("String: " + str(stringAdrian))
     print("\tLetras: " + str(letras))
     print("\tNumeros: " + str(numeros))
 
 
 #ejercicio 7
-def patronDibujarLetraA():
+def patronDibujarLetraA():  #partir de un cuadrado y dibujar en función de las posiciones de los asteriscos
     for i in range(0, 7):
+            #for....
         if i == 0:
             print(" *** ")
         elif (i == 3):
             print("*****")
         else:
             print("*   *")
+
+#ejercicio 7 - de otra forma
+def dibujarLetraA2():
+    zabalera = 5
+    altuera = 7
+    for y in range(altuera):
+        for x in range(zabalera):
+            if (y == 1 or y == 2 or y == 4 or y == 5 or y == 6) and (x == 0 or x == 4):
+                print("*", end="")
+            elif (y == 3):
+                print("*", end="")
+            elif (y == 0) and (x==1 or x==2 or x==3):
+                print("*", end="")
+            else:
+                print(" ", end="")
+
+        print()
+
+
+
 
 #ejercicio 8
 def letraVocalOConsonante():
@@ -415,12 +436,13 @@ def recorrerNumero():
 #recorrerNumero()   #prueba - recorrer digitos de un numero / caracteres de un string
 
 #multiplos5y7() #ejercicio 1
-cambioCelsiusFahrenheit() #ejercicio 2
+#cambioCelsiusFahrenheit() #ejercicio 2
 #dibujarFigura()    #ejercicio 3
 #paresEImparesDeUnaLista()   #ejercicio 4
 #cambiarIteracionesCondiones() #ejercicio 5
 #contarLetrasNumerosDeString() #ejercicio 6
 #patronDibujarLetraA()   #ejercicio 7
+#dibujarLetraA2()    #ejercicio 7 - de otra forma
 #letraVocalOConsonante() #ejercicio 8
 #fechaDecirEstacion() #ejercicio 9
 #tablaDeMultiplicar()   #ejercicio 10
