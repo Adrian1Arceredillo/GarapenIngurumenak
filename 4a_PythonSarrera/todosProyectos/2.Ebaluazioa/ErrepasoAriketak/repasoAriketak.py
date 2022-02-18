@@ -243,6 +243,24 @@ def darLaVueltaString():
 
     print(hitzaUser[::-1])
 
+#ejrcicio 13 - aitzol
+def esaldiaAlderantziz():
+    esaldia = input("Sartu hitz/esaldi bat: ")
+    for i in range(len(esaldia)-1, -1, -1):
+        print(esaldia[i], end="")
+
+#ejercicio 13 - irati - 1
+def reverseStringIrati1():
+    esaldiaUser = input("Sartu hitz/esaldi bat: ")
+    for i in range(len(esaldiaUser)):
+        print(esaldiaUser[len(esaldiaUser) - i - 1], end="")
+
+#ejercicio 13 - irati - 2
+def reverseStringIrati2():
+    esaldiaUser = input("Sartu hitz/esaldi bat: ")
+    for i in reversed (esaldiaUser):
+        print(i, end="")
+
 
 #ejercicio 14
 def numerosConTodosLosDigitosImpares():
@@ -414,7 +432,6 @@ def imprimir3ValoresMasPequeñosLista():
     print("\nHiru zenbaki txikienak: " + str(listaAdri[0:3]))
 
 
-
 #prueba recorrer dígitos de un número
 def recorrerNumero():
     numeroPrueba = 511
@@ -448,8 +465,14 @@ def recorrerNumero():
 #tablaDeMultiplicar()   #ejercicio 10
 #trianguloConNumeros()  #ejercicio 11
 #adivinarNumeroOculto() #ejercicio 12
+
 #darLaVueltaString()    #ejercicio 13
+#esaldiaAlderantziz()    #ejercicio 13 - aitzol
+#reverseStringIrati1()     #ejercicio 13 - irati 1
+#reverseStringIrati2()   #ejercicio 13 - irati 2
+
 #numerosConTodosLosDigitosImpares()  #ejercicio 14 - Galdetu
+
 #mediaDe3Numeros()   #ejercicio 15
 #sumaTodosLosElementosLista()    #ejercicio 16
 #multiplicarElementosLista()     #ejercicio 17
