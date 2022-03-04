@@ -21,6 +21,7 @@ with open('employee.txt', mode='r') as f:   #with oper -> sartu fitxategiaren iz
         print("2. Imprimir la última fila del fichero: ")
         print("3. Sustituir una palabra por otra. ")
         print("4. Introducir X letra y cambiar el resto por asteriscos. ")
+        print("5. Cambiar cada letra por la siguiente (hola -> ipmb) ")
         aukera = int(input("\nSartu aukera bat:"))
 
         if aukera == 1:
@@ -47,6 +48,24 @@ with open('employee.txt', mode='r') as f:   #with oper -> sartu fitxategiaren iz
                         print("*",end=" ")
                     elif i[j] == letraUser:
                         print(letraUser, end=" ")
+                print()
+        elif (aukera == 5):
+            for i in lerroak:
+                for j in range(len(i)):
+                    if i[j] == " ":
+                        print(" ",end="")
+                    elif i[j] == "z":
+                        siguiente = chr(97)
+                        print(str(siguiente),end="")
+                    elif i[j] == "Z":
+                        siguiente = chr(65)
+                        print(str(siguiente),end="")
+                    elif i[j] != "z" or i[j] != "Z":
+                        actualAsci = ord(i[j])
+                        siguiente = chr(actualAsci + 1)
+                        print(str(siguiente),end="")
+                    else:
+                        print(i[j],end="")
                 print()
 
         print("---------------")
